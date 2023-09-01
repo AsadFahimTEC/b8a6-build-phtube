@@ -26,21 +26,22 @@ const handleLoadVideo = async(categoryId) =>{
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card bg-gray-100 shadow-xl">
-        <figure><img src="${videos?.thumbnail}" alt="not_available" class="w-full" /></figure>
-        <div class="card-body flex gap-4 start">
-        <h2 class="card-title">${videos?.title}
-        </h2>
-          <div class=" justify-end">
-          <div class=" w-14 rounded-full">
-                <img src="${videos?.authors[0]?.profile_picture}" class="rounded-full">
+        <figure class="h-[200px]">
+            <img class="h-full" src="${videos?.thumbnail}" alt="not_available" class="w-full" />
+        </figure>
+<div class="flex justify-start gap-4 start">
+            <div class="w-10 h-10 rounded-full">
+                <img src="${videos?.authors[0]?.profile_picture}" class="w-full h-full rounded-full">
             </div>
-            <div class="badge badge-outline">${videos?.authors[0]?.profile_name}</div> 
-            <div class="badge badge-outline"></div>${videos?.authors[0]?.verified?videos?.authors[0]?.verified:"not verified"}
-          </div>
-
-          <div class="badge badge-outline">${videos?.others?.views}</div> 
-          <div class="badge badge-outline"></div>${videos?.others?.posted_date}
-        </div>
+        
+            <div>
+            <h2 class="text-base text-black font-normal">${videos.title}</h2>
+            <div class="flex justify-start gap-3 my-3 text-xs">
+                <h3 class="text-gray-500 ">${videos.authors[0].profile_name}</h3>
+                <p>${videos.authors[0]?.verified? `<img class="w-4" src="./../images/verified.svg">`: ''  }</p>
+            </div>
+            <p class='text-sm'>${videos.others.views} views</p>
+            </div>
         </div>
       </div>
         `
