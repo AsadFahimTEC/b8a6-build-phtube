@@ -41,6 +41,7 @@ const handleLoadVideo = async(categoryId) =>{
                 <p>${videos.authors[0]?.verified? `<img class="w-4" src="./../images/verified.svg">`: ''  }</p>
             </div>
             <p class='text-sm'>${videos.others.views} views</p>
+            <p class='text-sm'>${videos.others.posted_date} timeSort</p>
             </div>
         </div>
       </div>
@@ -51,4 +52,4 @@ const handleLoadVideo = async(categoryId) =>{
 };
 
 handleCategory();
-handleLoadVideo();
+handleLoadVideo(1000);
