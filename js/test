@@ -1,0 +1,31 @@
+<div class="card w-96 bg-base-100 shadow-xl">
+    <figure>
+        <img src="${videos?.thumbnail}" alt="not_available"  />
+    </figure>
+    <div class="card-body">
+      <div class="flex items-start">
+        <h2 class="card-title">${videos?.title}</h2>
+        <button class="mt-2 px-6 py-2 bg-pink-500 text-white rounded-[40px]">${news.rating.badge}</button>
+      </div>
+      <p>${news.details.slice(0, 50)}</p>
+      <h3>Total views: 
+       ${news.total_view? news.total_view: "No views"}
+      </h3>
+      <div class="card-footer flex justify-between my-8">
+        <div class="flex gap-2">
+            <div class=" w-14 rounded-full">
+                <img src="${videos?.authors?.profile_picture}" class="rounded-full">
+            </div>
+            <div>
+            <h4 class="font-bold">${news.author?.name}</h4>
+            <p>${news.author?.published_date}</p>
+            </div>
+        </div>
+        <div class="">
+        <button  onclick="handleModal('${news?._id}')" class="btn btn-neutral text-white hover:opacity-80 focus:opacity-70">Details</button>
+      </div>
+
+      </div>
+      
+    </div>
+  </div>

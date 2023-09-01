@@ -22,9 +22,29 @@ const handleLoadVideo = async(categoryId) =>{
     const data = await res.json();
     const cardContainer = document.getElementById('card-container')
     data.data.forEach((videos)=>{
+        console.log(videos);
         const div = document.createElement('div');
-    })
+        div.innerHTML = `
+        <div class="card bg-gray-100 shadow-xl">
+        <figure><img src="${videos?.thumbnail}" alt="not_available" class="w-full" /></figure>
+        <div class="card-body flex gap-4 start">
+
+        <h2 class="card-title">${videos?.title}
+        </h2>
+          <div class=" justify-end">
+          <div class=" w-14 rounded-full">
+                <img src="${videos?.authors[0]?.profile_picture}" class="rounded-full">
+            </div>
+            <div class="badge badge-outline">${videos?.authors[0]?.profile_name}</div> 
+            <div class="badge badge-outline"></div>${videos?.authors[0]?.verified?videos?.authors[0]?.verified:"not verified"}
+          </div>
+        </div>
+      </div>
+        `
+        cardContainer.appendChild(div);
+    });
     // console.log(data.data);
+
 };
 
 // const loadVideo = async(categoryId) => {
