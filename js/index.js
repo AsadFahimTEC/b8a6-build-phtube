@@ -17,7 +17,14 @@ const handleCategory = async () => {
 };
 
 const handleLoadVideo = async(categoryId) =>{
-    console.log(categoryId);
+    // console.log(categoryId);
+    const res = await fetch(` https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
+    const data = await res.json();
+    const cardContainer = document.getElementById('card-container')
+    data.data.forEach((videos)=>{
+        const div = document.createElement('div');
+    })
+    // console.log(data.data);
 };
 
 // const loadVideo = async(categoryId) => {
