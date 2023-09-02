@@ -27,8 +27,26 @@ const handleLoadVideo = async (categoryId) => {
   const allData = data.data;
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
+
+  if(allData.length === 0){
+    // console.log('connected');
+    const noData = document.getElementById("no-data-container");
+    const noDataDiv = document.createElement("div");
+    noDataDiv.innerHTML = `
+    <div>
+    <img src= "./../images/Icon.png">
+    <h3 class="text-4xl text-black">Oops!! Sorry, There is no <br> content here</h3>
+    
+    
+    </div>
+    
+    `
+    noData.innerHTML = "";
+    noData.appendChild(noDataDiv)
+  }
+
   allData.forEach((videos) => {
-    console.log(videos);
+    // console.log(videos);
     const div = document.createElement("div");
     div.innerHTML = `
         <div class="card bg-gray-100 shadow-xl mx-auto">
