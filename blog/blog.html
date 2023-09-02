@@ -20,45 +20,66 @@
                 <div class="collapse-title text-xl font-medium">
                 <h4>Discuss the scope of var, let, and const</h4>
                 </div>
-                <div class="collapse-content bg-[pink] text-black"> 
-                  <p>The scope of var is a functional scope. It means that variable defined the outside function can be accessed globally <br> and variable defined inside a particular function can be accessed within a function. Let's here given an example: <br>
-                    var a = 29; // here also output is 29 <br>
-                    function sum( ){ <br>
-                        console.log(a); // output is 29 <br>
-                    }
-                    sum( ); // <br>
+                <div class="collapse-content bg-[pink] text-black">
+                  <ul class="mt-4 text-[#800000]">
+                    <li>The scope of var is a functional scope.</li>
+                    <li> It means that variable defined the outside function can be accessed globally</li>
+                    <li>Let's here given an example: <br>
+                      var a = 29; // here also output is 29 <br>
+                      function sum( ){ <br>
+                          console.log(a); // output is 29 <br>
+                      }
+                      sum( ); // <br>
+  
+                      we can also redeclare var value but not declare before initialization.</li>
+                  </ul> 
 
-                    we can also redeclare var value but not declare before initialization.
-                </p><br>
-                  <p>The scope of let and const is a block scope. For let we cannot access its value outside the particular block. Let's here given example: <br>
-                    let  a = 29; <br>
-                    function sum( ){ <br>
-                        let b = 10; <br>
-                        console.log('the value of b is', b) // b prints value 10 <br>
-                        console.log('the value of a is', a); // a prints value 29 <br> 
-                    }
-                    sum( );
+                  <hr class="mt-4 bg-white">
+        
+                  <ul class="mt-4 text-[blue]">
+                    <li>The scope of let and const is a block scope. For let we cannot access its value outside the particular block. <br> Let's here given example: <br>
+                      let  a = 29; <br>
+                      function sum( ){ <br>
+                          let b = 10; <br>
+                          console.log('the value of b is', b) // b prints value 10 <br>
+                          console.log('the value of a is', a); // a prints value 29 <br> 
+                      } <br>
+                      sum( );
+                    </li>
+                  </ul>
+                  <hr class="mt-4">
 
-                    let  a = 29; <br>
-                    function sum( ){ <br>
-                        if(true){ <br>
-                        let b = 10; <br>
-                        console.log('the value of b is', b) // b prints value 10 <br>
-                        }<br>
-                        console.log(b) // it gives an reference error because b value can be defined in if block <br>  
-                    }
-                    sum( ); <br>
-                    console.log('the value of a is', a); <br> // the value of a is 29 <br>
+                  <ul class="mt-4 text-[red]">
+                    <li>
+                      Here is another example <br>
+                      let  a = 29; <br>
+                      function sum( ){ <br>
+                          if(true){ <br>
+                          let b = 10; <br>
+                          console.log('the value of b is', b) // b prints value 10 <br>
+                          }<br>
+                          console.log(b) // it gives an reference error because b value can be defined in if block <br>  
+                      }
+                      sum( ); <br>
+                      console.log('the value of a is', a); <br> // the value of a is 29 <br>
+                    </li>
+                  </ul>
+                   
+                  <hr class="mt-4">
+                  <ul class="mt-4 text-[black]">
+                    <li>
+                      The const keyword has also the same property like as let keyword only users can not update the value of const if once is declared. <br>
+                      here given an example: <br>
+                      const a = 10; <br>
+                      function sum(){ <br>
+                          a = 9; // <br>
+                          console.log(a); // here gives type error because const value is not reassigned but let keyword can do this <br>
+                      }
+                      sum();
 
-                    The const keyword has also the same property like as let keyword only users can not update the value of const if once is declared. <br>
-                    here given an example: <br>
-                    const a = 10; <br>
-                    function sum(){ <br>
-                        a = 9; // <br>
-                        console.log(a); // here gives type error because const value is not reassigned but let keyword can do this <br>
-                    }
-                    sum();
-                </p>
+                    </li>
+                  </ul>
+
                 </div>
               </div>
               <div class="collapse collapse-arrow bg-base-200">
@@ -69,6 +90,12 @@
                 <div class="collapse-content"> 
                   <p>Null Means that it can assigned to a variable which has no value. </p>
                   <p>Undefined Means that <span class="text-[red]">the value of</span> a variable is not exist but it can be declared</p>
+                  <ul class="mt-4"> For Example: <br> let y = null
+                    <li>This means that the number variable is empty and it value will be later</li>
+                    <li>For Example: <br> let y = undefined</li>
+                    <li>let no</li>
+                    <li>Both no and y has an undefined value</li>
+                  </ul>
                 </p>
                 </div>
               </div>
@@ -78,7 +105,14 @@
                     What do you mean by REST API?
                 </div>
                 <div class="collapse-content"> 
-                  <p>A REST API is an application programming interface, which can maintains the architectural styles and interaction between useful web API services.</p>
+                  <p>A REST API is an application programming interface, which can maintains the architectural styles <br> and interaction between useful web API services.</p>
+                  <p>REST stands for Representional State Transfer.It is an architectural styles for creating <br> websites using the HTTP Protocol.</p>
+                  <ol class="mt-4">Here given an example
+                    <li>fetch(
+                      "https://openapi.programming-hero.com/api/videos/categories" <br>here we can access the url first by using fetch keyword</li>
+                      <li class="mt-4">.then res => res.json()); <br>here we can wait for response and use res which can contains the <br>res.json() value or converted the url to json format </li>
+                      <li class="mt-4">.then data( => console.log(data)); <br>finally we can get our full data</li>
+                  </ol>
                 </div>
         </section>
     </main>
