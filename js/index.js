@@ -5,6 +5,7 @@ const handleCategory = async () => {
   const data = await res.json();
   const tabContainer = document.getElementById("tab-container");
   const allData = data.data;
+  
   allData.forEach((category) => {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -12,8 +13,9 @@ const handleCategory = async () => {
     `;
     tabContainer.appendChild(div);
   });
-  console.log(data.data);
 };
+
+
 
 const handleLoadVideo = async (categoryId) => {
   // console.log(categoryId);
@@ -28,10 +30,13 @@ const handleLoadVideo = async (categoryId) => {
     const div = document.createElement("div");
     div.innerHTML = `
         <div class="card bg-gray-100 shadow-xl">
-        <figure class="h-[200px]">
+        <div>
+        </div>
+        <figure class="h-[200px] relative">
             <img class="h-full" src="${
               videos?.thumbnail
             }" alt="not_available" class="w-full" />
+            <p class='text-sm absolute bottom-2 right-2 bg-black text-[#FFF]'>${videos.others.posted_date} seconds</p>
         </figure>
 <div class="flex justify-start gap-4 start">
             <div class="w-10 h-10 rounded-full">
@@ -53,15 +58,18 @@ const handleLoadVideo = async (categoryId) => {
                 }</p>
             </div>
             <p class='text-sm'>${videos.others.views} views</p>
-            <p class='text-sm'>${videos.others.posted_date} seconds</p>
             </div>
         </div>
       </div>
+
         `;
     cardContainer.appendChild(div);
   });
-  // console.log(data.data);
 };
+
+
+
+ 
 
 handleCategory();
 handleLoadVideo(1000);
