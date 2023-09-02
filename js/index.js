@@ -9,7 +9,7 @@ const handleCategory = async () => {
   allData.forEach((category) => {
     const div = document.createElement("div");
     div.innerHTML = `
-    <a onclick="handleLoadVideo('${category.category_id}')"  class="tab text-lg font-bold text-black active:text-red-700 relative before hover:text-gray-700">${category.category}</a>
+    <a onclick="handleLoadVideo('${category.category_id}')"  class="tab text-lg font-bold text-[black] active:text-red-500">${category.category}</a>
     `;
     tabContainer.appendChild(div);
   });
