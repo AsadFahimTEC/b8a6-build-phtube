@@ -29,7 +29,7 @@ const handleLoadVideo = async (categoryId) => {
     console.log(videos);
     const div = document.createElement("div");
     div.innerHTML = `
-        <div class="card bg-gray-100 shadow-xl">
+        <div class="card bg-gray-100 shadow-xl mx-auto">
         <div>
         </div>
         <figure class="h-[200px] relative">
