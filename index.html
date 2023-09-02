@@ -13,31 +13,26 @@
 <body>
 
     <!--navbar styles-->
-        <header>
-                <div class="navbar bg-base-100">
+        <nav>
+                <div class="navbar bg-base-100 flex">
                     <div class="navbar-start">
                       <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <button class="btn">Sort by View</button>
-                        </ul>
                       </div>
-                      <div>
-                        <img src="./images/Logo.png" class="h-full w-full" alt="">
+                      <div class="max-w-full w-auto h-auto">
+                        <img src="./images/Logo.png" class="" alt="">
                       </div>
                     </div>
-                    <div class="navbar-center hidden lg:flex">
-                      <ul class="menu menu-horizontal px-1">
-                        <button onclick="handleCategory()" class="btn text-[#252525]">Sort by View</button>
-                      </ul>
+                    <div class="mx-4 navbar-center lg:flex">
+                        <button class="btn text-[#252525]">Sort by View</button>
                     </div>
                     <div class="navbar-end">
                       <a href="./blog/blog.html"><button class="btn bg-[#FF1F3D] text-xl text-white rounded-lg">Blog</button></a>
                     </div>
                   </div>
-        </header>
+        </nav>
     
     
     <main>
@@ -56,9 +51,12 @@
         <section>
             <div id = "card-container" class="mx-6 my-6 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">  
 
-                
             </div>
         </section>
+
+        <!--no data found section-->
+        <div class="no-data-container">
+        </div>
 
     </main>
 

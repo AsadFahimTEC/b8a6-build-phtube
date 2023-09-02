@@ -13,6 +13,7 @@ const handleCategory = async () => {
     `;
     tabContainer.appendChild(div);
   });
+  
 };
 
 
@@ -23,9 +24,10 @@ const handleLoadVideo = async (categoryId) => {
     ` https://openapi.programming-hero.com/api/videos/category/${categoryId}`
   );
   const data = await res.json();
+  const allData = data.data;
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
-  data.data.forEach((videos) => {
+  allData.forEach((videos) => {
     console.log(videos);
     const div = document.createElement("div");
     div.innerHTML = `
