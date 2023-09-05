@@ -1,3 +1,5 @@
+// let allData = [];
+
 const handleCategory = async () => {
   const res = await fetch(
     "https://openapi.programming-hero.com/api/videos/categories"
@@ -5,6 +7,8 @@ const handleCategory = async () => {
   const data = await res.json();
   const tabContainer = document.getElementById("tab-container");
   const allData = data.data;
+
+  
   
   allData.forEach((category) => {
     const div = document.createElement("div");
@@ -31,6 +35,7 @@ const handleLoadVideo = async (categoryId) => {
   if(allData.length === 0){
     // console.log('connected');
     const noData = document.getElementById("no-data-container");
+    noData.innerHTML = "";
     const noDataDiv = document.createElement("div");
     noDataDiv.innerHTML = `
     <div>
@@ -40,13 +45,18 @@ const handleLoadVideo = async (categoryId) => {
     
     </div>
     
-    `
-    noData.innerHTML = "";
-    noData.appendChild(noDataDiv)
+    `;
+    
+    noData.appendChild(noDataDiv);
   }
+  
+  else{
+    const noData = document.getElementById("no-data-container");
+    noData.innerHTML = "";
+  }
+  
 
   allData.forEach((videos) => {
-    // console.log(videos);
     const div = document.createElement("div");
     div.innerHTML = `
         <div class="card bg-gray-100 shadow-xl mx-auto">
@@ -56,7 +66,7 @@ const handleLoadVideo = async (categoryId) => {
             <img class="h-full" src="${
               videos?.thumbnail
             }" alt="not_available" class="w-full" />
-            <p class='text-sm absolute bottom-2 right-2 bg-black text-[#FFF]'>${videos.others.posted_date} seconds</p>
+            <p class='text-sm absolute bottom-2 right-2 bg-black text-[#FFF]'>${videos.others?.posted_date ? Math.floor(`${videos.others.posted_date}` / 3600) + "hrs " + Math.floor(`${videos.others.posted_date}` % 3600 / 60 ) + "min age" : '' }</p>
         </figure>
 <div class="flex justify-start gap-4 start">
             <div class="w-10 h-10 rounded-full">
@@ -84,12 +94,14 @@ const handleLoadVideo = async (categoryId) => {
 
         `;
     cardContainer.appendChild(div);
+
+    
   });
 };
 
-
-
- 
+document.getElementById('sort').addEventListener('click', function(){
+  console.log('connected');
+})
 
 handleCategory();
 handleLoadVideo(1000);
